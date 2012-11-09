@@ -1,0 +1,25 @@
+﻿<Window x:Class="Fizbin.Kinect.Gestures.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:kv="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>        
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="320" Height="240">
+            <kv:KinectDepthViewer x:Name="DepthViewer" KinectSensorManager="{Binding KinectSensorManager}" />
+            <Canvas>
+                <kv:KinectSkeletonViewer
+                                    KinectSensorManager="{Binding KinectSensorManager}"
+                                    Width="{Binding ElementName=DepthViewer, Path=ActualWidth}"
+                                    Height="{Binding ElementName=DepthViewer, Path=ActualHeight}"
+                                    ShowBones="True" ShowJoints="True" ShowCenter="True" ImageType="Depth" />
+            </Canvas>
+        </Grid>
+
+        <TextBlock Text="{Binding Gesture}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Margin="-2,0,0,0"/>
+        <TextBlock Text="{Binding Gesture}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Margin="2,0,0,0"/>
+        <TextBlock Text="{Binding Gesture}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Margin="0,-2,0,0"/>
+        <TextBlock Text="{Binding Gesture}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Margin="0,2,0,0"/>
+        <TextBlock Text="{Binding Gesture}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="White"/>
+
+    </Grid>
+</Window>
