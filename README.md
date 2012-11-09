@@ -1,2 +1,2 @@
-KinectWorkbench
+Kinect Gesture Library
 ===============
