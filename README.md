@@ -1,2 +1,2 @@
-Kinect Gesture Library
-===============
+Except on Tuesdays (Fizbin) Kinect Gesture Library
+==================================================
