@@ -82,6 +82,18 @@ namespace Fizbin.Kinect.Gestures
             zoomOutSegments[1] = new ZoomSegment2();
             zoomOutSegments[2] = new ZoomSegment1();
             AddGesture(GestureType.ZoomOut, zoomOutSegments);
+
+            IRelativeGestureSegment[] swipeUpSegments = new IRelativeGestureSegment[3];
+            swipeUpSegments[0] = new SwipeUpSegment1();
+            swipeUpSegments[1] = new SwipeUpSegment2();
+            swipeUpSegments[2] = new SwipeUpSegment3();
+            AddGesture(GestureType.SwipeUp, swipeUpSegments);
+
+            IRelativeGestureSegment[] swipeDownSegments = new IRelativeGestureSegment[3];
+            swipeDownSegments[0] = new SwipeDownSegment1();
+            swipeDownSegments[1] = new SwipeDownSegment2();
+            swipeDownSegments[2] = new SwipeDownSegment3();
+            AddGesture(GestureType.SwipeDown, swipeDownSegments);
         }
 
         /// <summary>
