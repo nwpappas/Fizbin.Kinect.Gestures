@@ -71,7 +71,7 @@ namespace Fizbin.Kinect.Gestures
             }
 
             GesturePartResult result = this.gestureParts[this.currentGesturePart].CheckGesture(data);
-            if (result == GesturePartResult.Suceed)
+            if (result == GesturePartResult.Succeed)
             {
                 if (this.currentGesturePart + 1 < this.gestureParts.Length)
                 {
