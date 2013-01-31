@@ -10,6 +10,8 @@ The gesture demo takes advantage of helper classes included in the Developer Too
 * `Microsoft.Kinect.Toolkit` – Used to reference to `KinectSensorChooser` component, for automatically finding and handling updates to the Kinect sensor.
 * `Microsoft.Samples.Kinect.WpfViewers` – Used to reference the `KinectSensorManager` data model class.
 
+For installing and using these packages you put them in parallel to the folder with this project solution.
+You can install with "Developer Toolkit Browser" by installing the packages Microsoft.Kinect.Toolkit and "Kinect Explorer"
 ##Fizbin.Kinect.Gestures
 
 ###Executing on Gestures

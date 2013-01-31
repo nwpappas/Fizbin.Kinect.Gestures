@@ -6,6 +6,7 @@ using Microsoft.Samples.Kinect.WpfViewers;
 using System.Diagnostics;
 using System.ComponentModel;
 using System;
+using System.Timers;
 
 namespace Fizbin.Kinect.Gestures.Demo
 {
@@ -17,6 +18,8 @@ namespace Fizbin.Kinect.Gestures.Demo
         private readonly KinectSensorChooser sensorChooser = new KinectSensorChooser();
 
         private Skeleton[] skeletons = new Skeleton[0];
+
+        System.Timers.Timer clearTimer;
 
         // skeleton gesture recognizer
         private GestureController gestureController;
@@ -37,6 +40,10 @@ namespace Fizbin.Kinect.Gestures.Demo
             // bind chooser's sensor value to the local sensor manager
             var kinectSensorBinding = new Binding("Kinect") { Source = this.sensorChooser };
             BindingOperations.SetBinding(this.KinectSensorManager, KinectSensorManager.KinectSensorProperty, kinectSensorBinding);
+			// add timer for clearing last detected gesture
+            clearTimer = new System.Timers.Timer(3000);
+            clearTimer.Elapsed += new ElapsedEventHandler(clearTimer_Elapsed);
+
         }
 
         #region Kinect Discovery & Setup
@@ -181,6 +188,12 @@ namespace Fizbin.Kinect.Gestures.Demo
                     break;
                 case GestureType.SwipeRight:
                     Gesture = "Swipe Right";
+ 					break;
+                case GestureType.SwipeUp:
+                    Gesture = "Swipe Up";
+                    break;
+                case GestureType.SwipeDown:
+                    Gesture = "Swipe Down";
                     break;
                 case GestureType.ZoomIn:
                     Gesture = "Zoom In";
@@ -192,6 +205,9 @@ namespace Fizbin.Kinect.Gestures.Demo
                 default:
                     break;
             }
+
+            clearTimer.Stop();
+            clearTimer.Start();
         }
 
         /// <summary>
@@ -223,6 +239,16 @@ namespace Fizbin.Kinect.Gestures.Demo
                     gestureController.UpdateAllGestures(skeleton);
                 }
             }
+        }
+
+        /// <summary>
+        /// Clear text after some time
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void clearTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Gesture = "";
         }
 
         #endregion Event Handlers

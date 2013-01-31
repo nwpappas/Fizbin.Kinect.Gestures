@@ -18,7 +18,7 @@ namespace Fizbin.Kinect.Gestures
         /// <summary>
         /// Gesture part suceed
         /// </summary>
-        Suceed,
+        Succeed,
 
         /// <summary>
         /// Gesture part result undetermined
@@ -38,6 +38,8 @@ namespace Fizbin.Kinect.Gestures
         Menu,
         SwipeLeft,
         SwipeRight,
+        SwipeUp,
+        SwipeDown,
         ZoomIn,
         ZoomOut
     }
