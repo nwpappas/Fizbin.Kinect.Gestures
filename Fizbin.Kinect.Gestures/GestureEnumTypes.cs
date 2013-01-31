@@ -16,7 +16,7 @@ namespace Fizbin.Kinect.Gestures
         Fail,
 
         /// <summary>
-        /// Gesture part suceed
+        /// Gesture part succeed
         /// </summary>
         Succeed,
 

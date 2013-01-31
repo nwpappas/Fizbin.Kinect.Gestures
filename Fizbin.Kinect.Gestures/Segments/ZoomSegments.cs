@@ -20,7 +20,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                     if (skeleton.Joints[JointType.HandRight].Position.X < skeleton.Joints[JointType.ShoulderRight].Position.X && skeleton.Joints[JointType.HandRight].Position.X > skeleton.Joints[JointType.ShoulderLeft].Position.X &&
                         skeleton.Joints[JointType.HandLeft].Position.X > skeleton.Joints[JointType.ShoulderLeft].Position.X && skeleton.Joints[JointType.HandLeft].Position.X < skeleton.Joints[JointType.ShoulderRight].Position.X)
                     {
-                        return GesturePartResult.Suceed;
+                        return GesturePartResult.Succeed;
                     }
 
                     return GesturePartResult.Pausing;
@@ -47,7 +47,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                     // Hands outside shoulders
                     if (skeleton.Joints[JointType.HandRight].Position.X > skeleton.Joints[JointType.ShoulderRight].Position.X && skeleton.Joints[JointType.HandLeft].Position.X < skeleton.Joints[JointType.ShoulderLeft].Position.X)
                     {
-                        return GesturePartResult.Suceed;
+                        return GesturePartResult.Succeed;
                     }
 
                     return GesturePartResult.Pausing;
@@ -74,7 +74,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                     // Hands outside elbows
                     if (skeleton.Joints[JointType.HandRight].Position.X > skeleton.Joints[JointType.ElbowRight].Position.X && skeleton.Joints[JointType.HandLeft].Position.X < skeleton.Joints[JointType.ElbowLeft].Position.X)
                     {
-                        return GesturePartResult.Suceed;
+                        return GesturePartResult.Succeed;
                     }
 
                     return GesturePartResult.Pausing;

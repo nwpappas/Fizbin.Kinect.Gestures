@@ -57,7 +57,7 @@
     <Compile Include="Segments\SwipeUp\SwipeUpSegment1.cs" />
     <Compile Include="Segments\SwipeUp\SwipeUpSegment2.cs" />
     <Compile Include="Segments\SwipeUp\SwipeUpSegment3.cs" />
-    <Compile Include="Segments\Menu\MenuSegments.cs" />
+    <Compile Include="Segments\MenuSegments.cs" />
     <Compile Include="Segments\SwipeLeft\SwipeLeftSegment1.cs" />
     <Compile Include="Segments\SwipeLeft\SwipeLeftSegment2.cs" />
     <Compile Include="Segments\SwipeLeft\SwipeLeftSegment3.cs" />

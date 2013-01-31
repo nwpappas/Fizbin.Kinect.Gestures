@@ -3,7 +3,6 @@ using System.Windows.Data;
 using Microsoft.Kinect;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Samples.Kinect.WpfViewers;
-using System.Diagnostics;
 using System.ComponentModel;
 using System;
 using System.Timers;
@@ -19,7 +18,7 @@ namespace Fizbin.Kinect.Gestures.Demo
 
         private Skeleton[] skeletons = new Skeleton[0];
 
-        System.Timers.Timer clearTimer;
+        Timer _clearTimer;
 
         // skeleton gesture recognizer
         private GestureController gestureController;
@@ -40,9 +39,10 @@ namespace Fizbin.Kinect.Gestures.Demo
             // bind chooser's sensor value to the local sensor manager
             var kinectSensorBinding = new Binding("Kinect") { Source = this.sensorChooser };
             BindingOperations.SetBinding(this.KinectSensorManager, KinectSensorManager.KinectSensorProperty, kinectSensorBinding);
+
 			// add timer for clearing last detected gesture
-            clearTimer = new System.Timers.Timer(3000);
-            clearTimer.Elapsed += new ElapsedEventHandler(clearTimer_Elapsed);
+            _clearTimer = new Timer(2000);
+            _clearTimer.Elapsed += new ElapsedEventHandler(clearTimer_Elapsed);
 
         }
 
@@ -140,8 +140,6 @@ namespace Fizbin.Kinect.Gestures.Demo
 
                 _gesture = value;
 
-                Debug.WriteLine("Gesture = " + _gesture);
-
                 if (this.PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Gesture"));
             }
@@ -167,8 +165,6 @@ namespace Fizbin.Kinect.Gestures.Demo
         /// <param name="e">Gesture event arguments.</param>
         private void OnGestureRecognized(object sender, GestureEventArgs e)
         {
-            Debug.WriteLine(e.GestureType);
-
             switch (e.GestureType)
             {
                 case GestureType.Menu:
@@ -206,8 +202,7 @@ namespace Fizbin.Kinect.Gestures.Demo
                     break;
             }
 
-            clearTimer.Stop();
-            clearTimer.Start();
+            _clearTimer.Start();
         }
 
         /// <summary>
@@ -249,6 +244,7 @@ namespace Fizbin.Kinect.Gestures.Demo
         void clearTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             Gesture = "";
+            _clearTimer.Stop();
         }
 
         #endregion Event Handlers

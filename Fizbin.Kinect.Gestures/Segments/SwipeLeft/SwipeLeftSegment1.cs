@@ -25,7 +25,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                     // right hand right of right shoulder
                     if (skeleton.Joints[JointType.HandRight].Position.X > skeleton.Joints[JointType.ShoulderRight].Position.X)
                     {
-                        return GesturePartResult.Suceed;
+                        return GesturePartResult.Succeed;
                     }
                     return GesturePartResult.Pausing;
                 }

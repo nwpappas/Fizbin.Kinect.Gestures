@@ -29,7 +29,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                         // Hands very close
                         if (skeleton.Joints[JointType.HandRight].Position.X - skeleton.Joints[JointType.HandLeft].Position.X < 0)
                         {
-                            return GesturePartResult.Suceed;
+                            return GesturePartResult.Succeed;
                         }
 
                         return GesturePartResult.Pausing;

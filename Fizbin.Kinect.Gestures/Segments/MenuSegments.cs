@@ -22,7 +22,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                     // left hand 0.2 to left of left elbow
                     if (skeleton.Joints[JointType.HandLeft].Position.X < skeleton.Joints[JointType.ElbowLeft].Position.X - 0.2)
                     {
-                        return GesturePartResult.Suceed;
+                        return GesturePartResult.Succeed;
                     }
                 }
 

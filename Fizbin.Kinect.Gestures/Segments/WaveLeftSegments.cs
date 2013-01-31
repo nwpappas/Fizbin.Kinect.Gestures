@@ -21,7 +21,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                 // hand right of elbow
                 if (skeleton.Joints[JointType.HandLeft].Position.X > skeleton.Joints[JointType.ElbowLeft].Position.X)
                 {
-                    return GesturePartResult.Suceed;
+                    return GesturePartResult.Succeed;
                 }
 
                 // hand has not dropped but is not quite where we expect it to be, pausing till next frame
@@ -48,7 +48,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                 // hand right of elbow
                 if (skeleton.Joints[JointType.HandLeft].Position.X < skeleton.Joints[JointType.ElbowLeft].Position.X)
                 {
-                    return GesturePartResult.Suceed;
+                    return GesturePartResult.Succeed;
                 }
 
                 // hand has not dropped but is not quite where we expect it to be, pausing till next frame

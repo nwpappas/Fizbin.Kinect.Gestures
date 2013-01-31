@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:kv="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>        
-        <Grid>
+    <Grid>
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="320" Height="240">
             <kv:KinectDepthViewer x:Name="DepthViewer" KinectSensorManager="{Binding KinectSensorManager}" />
             <Canvas>
                 <kv:KinectSkeletonViewer

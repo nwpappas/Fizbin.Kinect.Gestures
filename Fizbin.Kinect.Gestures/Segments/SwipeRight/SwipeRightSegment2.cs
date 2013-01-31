@@ -26,7 +26,7 @@ namespace Fizbin.Kinect.Gestures.Segments
                     if (skeleton.Joints[JointType.HandLeft].Position.X < skeleton.Joints[JointType.ShoulderRight].Position.X && skeleton.Joints[JointType.HandLeft].Position.X > skeleton.Joints[JointType.ShoulderLeft].Position.X)
                     {
                         // Debug.WriteLine("GesturePart 1 - left hand left of left Shoulder - PASS");
-                        return GesturePartResult.Suceed;
+                        return GesturePartResult.Succeed;
                     }
 
                     // Debug.WriteLine("GesturePart 1 - left hand left of left Shoulder - UNDETERMINED");
