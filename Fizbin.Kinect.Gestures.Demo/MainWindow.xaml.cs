@@ -96,7 +96,7 @@ namespace Fizbin.Kinect.Gestures.Demo
                 gestureController.GestureRecognized += OnGestureRecognized;
 
                 // register the gestures for this demo
-                // ...
+                RegisterGestures();
             }
         }
 
@@ -116,7 +116,7 @@ namespace Fizbin.Kinect.Gestures.Demo
         /// <summary>
         /// Helper function to register all available 
         /// </summary>
-        private void RegisterGesture()
+        private void RegisterGestures()
         {
             // define the gestures for the demo
 
