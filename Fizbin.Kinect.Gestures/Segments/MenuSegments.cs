@@ -1,4 +1,5 @@
 ﻿using Microsoft.Kinect;
+
 namespace Fizbin.Kinect.Gestures.Segments
 {
     /// <summary>

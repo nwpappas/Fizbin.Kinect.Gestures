@@ -1,9 +1,8 @@
 ﻿using Microsoft.Kinect;
-using System.Diagnostics;
 
 namespace Fizbin.Kinect.Gestures.Segments
 {
-    class ZoomSegment1 : IRelativeGestureSegment
+    public class ZoomSegment1 : IRelativeGestureSegment
     {
         public GesturePartResult CheckGesture(Skeleton skeleton)
         {
@@ -33,7 +32,7 @@ namespace Fizbin.Kinect.Gestures.Segments
         }
     }
 
-    class ZoomSegment2 : IRelativeGestureSegment
+    public class ZoomSegment2 : IRelativeGestureSegment
     {
         public GesturePartResult CheckGesture(Skeleton skeleton)
         {
@@ -60,7 +59,7 @@ namespace Fizbin.Kinect.Gestures.Segments
         }
     }
 
-    class ZoomSegment3 : IRelativeGestureSegment
+    public class ZoomSegment3 : IRelativeGestureSegment
     {
         public GesturePartResult CheckGesture(Skeleton skeleton)
         {
