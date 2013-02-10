@@ -25,22 +25,4 @@ namespace Fizbin.Kinect.Gestures
         /// </summary>
         Pausing
     }
-
-    /// <summary>
-    /// The gesture type
-    /// </summary>
-    public enum GestureType
-    {
-        None,
-        JoinedHands,
-        WaveRight,
-        WaveLeft,
-        Menu,
-        SwipeLeft,
-        SwipeRight,
-        SwipeUp,
-        SwipeDown,
-        ZoomIn,
-        ZoomOut
-    }
 }

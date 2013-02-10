@@ -12,24 +12,19 @@ namespace Fizbin.Kinect.Gestures
         /// </summary>
         /// <param name="type">The gesture type.</param>
         /// <param name="trackingID">The tracking ID.</param>
-        /// <param name="userID">The user ID.</param>
-        public GestureEventArgs(GestureType type, int trackingId)
+        public GestureEventArgs(string name, int trackingId)
         {
             this.TrackingId = trackingId;
-            this.GestureType = type;
+            this.GestureName = name;
         }
 
         /// <summary>
         /// Gets or sets the type of the gesture.
         /// </summary>
         /// <value>
-        /// The type of the gesture.
+        /// The name of the gesture.
         /// </value>
-        public GestureType GestureType
-        {
-            get;
-            set;
-        }
+        public string GestureName { get; set; }
 
         /// <summary>
         /// Gets or sets the tracking ID.
@@ -37,10 +32,6 @@ namespace Fizbin.Kinect.Gestures
         /// <value>
         /// The tracking ID.
         /// </value>
-        public int TrackingId
-        {
-            get;
-            set;
-        }
+        public int TrackingId { get; set; }
     }
 }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Kinect;
+﻿using Microsoft.Kinect;
 
 namespace Fizbin.Kinect.Gestures.Segments
 {
-    class WaveLeftSegment1 : IRelativeGestureSegment
+    public class WaveLeftSegment1 : IRelativeGestureSegment
     {
         /// <summary>
         /// Checks the gesture.
@@ -33,7 +29,7 @@ namespace Fizbin.Kinect.Gestures.Segments
         }
     }
 
-    class WaveLeftSegment2 : IRelativeGestureSegment
+    public class WaveLeftSegment2 : IRelativeGestureSegment
     {
         /// <summary>
         /// Checks the gesture.
