@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Kinect;
+﻿using Microsoft.Kinect;
 
 namespace Fizbin.Kinect.Gestures.Segments
 {
-    class JoinedHandsSegment1 : IRelativeGestureSegment
+    public class JoinedHandsSegment1 : IRelativeGestureSegment
     {
         /// <summary>
         /// Checks the gesture.

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Kinect;
+﻿using Microsoft.Kinect;
+using System;
 
 namespace Fizbin.Kinect.Gestures
 {
@@ -34,19 +31,19 @@ namespace Fizbin.Kinect.Gestures
         private bool paused = false;
 
         /// <summary>
-        /// The type of gesture that this is
+        /// The name of gesture that this is
         /// </summary>
-        private GestureType type;
+        private string name;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Gesture"/> class.
         /// </summary>
         /// <param name="type">The type of gesture.</param>
         /// <param name="gestureParts">The gesture parts.</param>
-        public Gesture(GestureType type, IRelativeGestureSegment[] gestureParts)
+        public Gesture(string name, IRelativeGestureSegment[] gestureParts)
         {
             this.gestureParts = gestureParts;
-            this.type = type;
+            this.name = name;
         }
 
         /// <summary>
@@ -84,7 +81,7 @@ namespace Fizbin.Kinect.Gestures
                 {
                     if (this.GestureRecognized != null)
                     {
-                        this.GestureRecognized(this, new GestureEventArgs(this.type, data.TrackingId));
+                        this.GestureRecognized(this, new GestureEventArgs(this.name, data.TrackingId));
                         this.Reset();
                     }
                 }
