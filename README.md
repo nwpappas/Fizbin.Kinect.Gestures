@@ -1,6 +1,6 @@
 Except on Tuesdays (Fizbin) Kinect Gesture Library
 ==================================================
-http://www.exceptontuesdays.com/gestures-with-microsoft-kinect-for-windows-sdk-v1-5/
+http://www.exceptontuesdays.com/
 
 ##Fizbin.Kinect.Gestures.Demo
 Included in the repository is a simple demo application which shows how to easily set up a Kinect enabled application to recognize gestures.
@@ -60,32 +60,30 @@ If a gesture is recognized an event will be fired.  We go to our event callback 
 ```csharp
 private void OnGestureRecognized(object sender, GestureEventArgs e)
 {
-        Debug.WriteLine(e.GestureType);
-
-        switch (e.GestureType)
+        switch (e.GestureName)
         {
-                case GestureType.Menu:
+                case "Menu":
                         Gesture = "Menu";
                         break;
-                case GestureType.WaveRight:
+                case "WaveRight":
                         Gesture = "Wave Right";
                         break;
-                case GestureType.WaveLeft:
+                case "WaveLeft":
                         Gesture = "Wave Left";
                         break;
-                case GestureType.JoinedHands:
+                case "JoinedHands":
                         Gesture = "Joined Hands";
                         break;
-                case GestureType.SwipeLeft:
+                case "SwipeLeft":
                         Gesture = "Swipe Left";
                         break;
-                case GestureType.SwipeRight:
+                case "SwipeRight":
                         Gesture = "Swipe Right";
                         break;
-                case GestureType.ZoomIn:
+                case "ZoomIn":
                         Gesture = "Zoom In";
                         break;
-                case GestureType.ZoomOut:
+                case "ZoomOut":
                         Gesture = "Zoom Out";
                         break;
 
