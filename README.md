@@ -25,6 +25,16 @@ gestureController = new GestureController();
 gestureController.GestureRecognized += OnGestureRecognized;
 ```
 
+After the `GestureController` is initialized you can register new gestures with it.  A gesture is made up of one or more `IRelativeGestureSegment`s, which are passed to the `AddGesture` function of the `GestureController` along with a string which can be used for identifying the gesture when the `GestureRecognized` event is fired.
+
+```csharp
+IRelativeGestureSegment[] swipeleftSegments = new IRelativeGestureSegment[3];
+swipeleftSegments[0] = new SwipeLeftSegment1();
+swipeleftSegments[1] = new SwipeLeftSegment2();
+swipeleftSegments[2] = new SwipeLeftSegment3();
+gestureController.AddGesture("SwipeLeft", swipeleftSegments);
+```
+
 The gesture recognizer analyzes data from the skeleton.  Each time we receive a new skeleton frame we send it off to the gesture recognizer for review:
 
 ```csharp
